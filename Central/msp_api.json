@@ -1,0 +1,4219 @@
+{
+	"info": {
+		"_postman_id": "28247905-aeda-40e6-9534-80b35f352936",
+		"name": "MSP",
+		"description": "MSP API gateway rest endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Get list of customers under the MSP account based on limit and offset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/customers?offset=0&limit=10&customer_name=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "pagination start index"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "pagination end index"
+								},
+								{
+									"key": "customer_name",
+									"value": "<string>",
+									"description": "Filter on Customer Name"
+								}
+							]
+						},
+						"description": "Get list of customers under the MSP account\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers?offset=0&limit=10&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"customers\": [\n  {\n   \"account_status\": \"<string>\",\n   \"account_type\": \"<string>\",\n   \"created_at\": \"<number>\",\n   \"customer_id\": \"<string>\",\n   \"customer_name\": \"<string>\",\n   \"desription\": \"<string>\",\n   \"device_quota\": \"<integer>\",\n   \"group\": {\n    \"name\": \"<string>\"\n   },\n   \"msp_id\": \"<integer>\",\n   \"provision_status\": \"<string>\",\n   \"ap_config_diff\": \"<string>\",\n   \"hppc_config_diff\": \"<string>\",\n   \"switch_config_diff\": \"<string>\"\n  },\n  {\n   \"account_status\": \"<string>\",\n   \"account_type\": \"<string>\",\n   \"created_at\": \"<number>\",\n   \"customer_id\": \"<string>\",\n   \"customer_name\": \"<string>\",\n   \"desription\": \"<string>\",\n   \"device_quota\": \"<integer>\",\n   \"group\": {\n    \"name\": \"<string>\"\n   },\n   \"msp_id\": \"<integer>\",\n   \"provision_status\": \"<string>\",\n   \"ap_config_diff\": \"<string>\",\n   \"hppc_config_diff\": \"<string>\",\n   \"switch_config_diff\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers?offset=0&limit=10&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers?offset=0&limit=10&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers?offset=0&limit=10&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers?offset=0&limit=10&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers?offset=0&limit=10&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers?offset=0&limit=10&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers?offset=0&limit=10&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_name\": \"<string>\",\n    \"group\": {\n        \"name\": \"<string>\"\n    },\n    \"description\": \"<string>\",\n    \"lock_msp_ssids\": false\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"customers"
+							]
+						},
+						"description": "Create a new customer under MSP account\n"
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get details of customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"customers",
+								":customer_id"
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "<string>",
+									"description": "(Required) Filter on Customer ID"
+								}
+							]
+						},
+						"description": "Get details of customer\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"account_status\": \"<string>\",\n \"account_type\": \"<string>\",\n \"created_at\": \"<number>\",\n \"customer_id\": \"<string>\",\n \"customer_name\": \"<string>\",\n \"desription\": \"<string>\",\n \"device_quota\": \"<integer>\",\n \"group\": {\n  \"name\": \"<string>\"\n },\n \"msp_id\": \"<integer>\",\n \"provision_status\": \"<string>\",\n \"ap_config_diff\": \"<string>\",\n \"hppc_config_diff\": \"<string>\",\n \"switch_config_diff\": \"<string>\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update a customer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_name\": \"<string>\",\n    \"group\": {\n        \"name\": \"<string>\"\n    },\n    \"description\": \"<string>\",\n    \"lock_msp_ssids\": false\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"customers",
+								":customer_id"
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "<string>",
+									"description": "(Required) Filter on Customer ID"
+								}
+							]
+						},
+						"description": "Update a customer\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"customers",
+								":customer_id"
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "<string>",
+									"description": "(Required) Filter on Customer ID"
+								}
+							]
+						},
+						"description": "Delete a customer\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Devices",
+			"item": [
+				{
+					"name": "Get list of devices and licenses under the Customer account based on limit and offset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices?offset=0&limit=10&device_type=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"customers",
+								":customer_id",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "pagination start index"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "pagination end index"
+								},
+								{
+									"key": "device_type",
+									"value": "<string>",
+									"description": "Filter on device_type to get list of devices\n  iap\n  switch\n  all_controller"
+								}
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "<string>",
+									"description": "(Required) Filter on Customer ID"
+								}
+							]
+						},
+						"description": "Get list of devices and licenses under the Customer account\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices?offset=0&limit=10&device_type=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"activate_credentials_used\": \"<boolean>\",\n \"devices\": [\n  {\n   \"customer_id\": \"<string>\",\n   \"customer_name\": \"<string>\",\n   \"macaddr\": \"<string>\",\n   \"model\": \"<string>\",\n   \"serial\": \"<string>\",\n   \"services\": [\n    \"<string>\",\n    \"<string>\"\n   ]\n  },\n  {\n   \"customer_id\": \"<string>\",\n   \"customer_name\": \"<string>\",\n   \"macaddr\": \"<string>\",\n   \"model\": \"<string>\",\n   \"serial\": \"<string>\",\n   \"services\": [\n    \"<string>\",\n    \"<string>\"\n   ]\n  }\n ],\n \"enable_device_sync\": \"<boolean>\",\n \"license_expired\": \"<boolean>\",\n \"next_sync_available\": \"<number>\",\n \"total_devices\": \"<number>\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices?offset=0&limit=10&device_type=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices?offset=0&limit=10&device_type=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices?offset=0&limit=10&device_type=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices?offset=0&limit=10&device_type=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices?offset=0&limit=10&device_type=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices?offset=0&limit=10&device_type=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices?offset=0&limit=10&device_type=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Move a device to an end-customer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"devices\": [\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        },\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        }\n    ],\n    \"group\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"customers",
+								":customer_id",
+								"devices"
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "<string>",
+									"description": "(Required) Filter on Customer ID"
+								}
+							]
+						},
+						"description": "Assign or Un-assign a device to or from an end-customer.Use end-customer-id to assign to Tenant and msp-id to un-assign from Tenant\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"devices\": [\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        },\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        }\n    ],\n    \"group\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"devices\": [\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        },\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        }\n    ],\n    \"group\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"devices\": [\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        },\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        }\n    ],\n    \"group\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"devices\": [\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        },\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        }\n    ],\n    \"group\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"devices\": [\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        },\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        }\n    ],\n    \"group\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"devices\": [\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        },\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        }\n    ],\n    \"group\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"devices\": [\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        },\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        }\n    ],\n    \"group\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"devices\": [\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        },\n        {\n            \"serial\": \"<string>\",\n            \"mac\": \"<string>\"\n        }\n    ],\n    \"group\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/devices",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"devices"
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get list of devices and licenses under the MSP account based on limit and offset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/devices?offset=0&limit=10&device_allocation_status=0&device_type=<string>&customer_name=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"devices"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "pagination start index"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "pagination end index"
+								},
+								{
+									"key": "device_allocation_status",
+									"value": "0",
+									"description": "Filter on device_allocation_status to get list of devices\n  0-All\n  1-Allocated\n  2-Available"
+								},
+								{
+									"key": "device_type",
+									"value": "<string>",
+									"description": "Filter on device_type to get list of devices\n  iap\n  switch\n  all_controller"
+								},
+								{
+									"key": "customer_name",
+									"value": "<string>",
+									"description": "Filter on Customer Name"
+								}
+							]
+						},
+						"description": "Get list of devices and licenses under the MSP account\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/devices?offset=0&limit=10&device_allocation_status=0&device_type=<string>&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_allocation_status",
+											"value": "0"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"activate_credentials_used\": \"<boolean>\",\n \"devices\": [\n  {\n   \"customer_id\": \"<string>\",\n   \"customer_name\": \"<string>\",\n   \"macaddr\": \"<string>\",\n   \"model\": \"<string>\",\n   \"serial\": \"<string>\",\n   \"services\": [\n    \"<string>\",\n    \"<string>\"\n   ]\n  },\n  {\n   \"customer_id\": \"<string>\",\n   \"customer_name\": \"<string>\",\n   \"macaddr\": \"<string>\",\n   \"model\": \"<string>\",\n   \"serial\": \"<string>\",\n   \"services\": [\n    \"<string>\",\n    \"<string>\"\n   ]\n  }\n ],\n \"enable_device_sync\": \"<boolean>\",\n \"license_expired\": \"<boolean>\",\n \"next_sync_available\": \"<number>\",\n \"total_devices\": \"<number>\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/devices?offset=0&limit=10&device_allocation_status=0&device_type=<string>&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_allocation_status",
+											"value": "0"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/devices?offset=0&limit=10&device_allocation_status=0&device_type=<string>&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_allocation_status",
+											"value": "0"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/devices?offset=0&limit=10&device_allocation_status=0&device_type=<string>&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_allocation_status",
+											"value": "0"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/devices?offset=0&limit=10&device_allocation_status=0&device_type=<string>&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_allocation_status",
+											"value": "0"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/devices?offset=0&limit=10&device_allocation_status=0&device_type=<string>&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_allocation_status",
+											"value": "0"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/devices?offset=0&limit=10&device_allocation_status=0&device_type=<string>&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_allocation_status",
+											"value": "0"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/devices?offset=0&limit=10&device_allocation_status=0&device_type=<string>&customer_name=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"devices"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "device_allocation_status",
+											"value": "0"
+										},
+										{
+											"key": "device_type",
+											"value": "<string>"
+										},
+										{
+											"key": "customer_name",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Resources",
+			"item": [
+				{
+					"name": "Get the resource under the MSP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/resource",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"resource"
+							]
+						},
+						"description": "Get the resource under the MSP\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"branding\": {\n  \"contact_link\": \"<string>\",\n  \"logo_image_url\": \"<string>\",\n  \"mail_address\": \"<string>\",\n  \"primary_color\": \"<string>\",\n  \"product_name\": \"<string>\",\n  \"provider_name\": \"<string>\",\n  \"sender_email_address\": \"<string>\",\n  \"service_link\": \"<string>\",\n  \"terms_link\": \"<string>\"\n },\n \"image_blob\": \"<string>\",\n \"skin_info\": \"<string>\"\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit an existing resource for the MSP",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"branding\": {\n        \"contact_link\": \"<string>\",\n        \"logo_image_url\": \"<string>\",\n        \"mail_address\": \"<string>\",\n        \"primary_color\": \"<string>\",\n        \"product_name\": \"<string>\",\n        \"provider_name\": \"<string>\",\n        \"sender_email_address\": \"<string>\",\n        \"service_link\": \"<string>\",\n        \"terms_link\": \"<string>\"\n    },\n    \"image_blob\": \"<string>\",\n    \"skin_info\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/resource",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"resource"
+							]
+						},
+						"description": "Edit an existing resource for the MSP\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"branding\": {\n        \"contact_link\": \"<string>\",\n        \"logo_image_url\": \"<string>\",\n        \"mail_address\": \"<string>\",\n        \"primary_color\": \"<string>\",\n        \"product_name\": \"<string>\",\n        \"provider_name\": \"<string>\",\n        \"sender_email_address\": \"<string>\",\n        \"service_link\": \"<string>\",\n        \"terms_link\": \"<string>\"\n    },\n    \"image_blob\": \"<string>\",\n    \"skin_info\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"success\""
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"branding\": {\n        \"contact_link\": \"<string>\",\n        \"logo_image_url\": \"<string>\",\n        \"mail_address\": \"<string>\",\n        \"primary_color\": \"<string>\",\n        \"product_name\": \"<string>\",\n        \"provider_name\": \"<string>\",\n        \"sender_email_address\": \"<string>\",\n        \"service_link\": \"<string>\",\n        \"terms_link\": \"<string>\"\n    },\n    \"image_blob\": \"<string>\",\n    \"skin_info\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"branding\": {\n        \"contact_link\": \"<string>\",\n        \"logo_image_url\": \"<string>\",\n        \"mail_address\": \"<string>\",\n        \"primary_color\": \"<string>\",\n        \"product_name\": \"<string>\",\n        \"provider_name\": \"<string>\",\n        \"sender_email_address\": \"<string>\",\n        \"service_link\": \"<string>\",\n        \"terms_link\": \"<string>\"\n    },\n    \"image_blob\": \"<string>\",\n    \"skin_info\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"branding\": {\n        \"contact_link\": \"<string>\",\n        \"logo_image_url\": \"<string>\",\n        \"mail_address\": \"<string>\",\n        \"primary_color\": \"<string>\",\n        \"product_name\": \"<string>\",\n        \"provider_name\": \"<string>\",\n        \"sender_email_address\": \"<string>\",\n        \"service_link\": \"<string>\",\n        \"terms_link\": \"<string>\"\n    },\n    \"image_blob\": \"<string>\",\n    \"skin_info\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"branding\": {\n        \"contact_link\": \"<string>\",\n        \"logo_image_url\": \"<string>\",\n        \"mail_address\": \"<string>\",\n        \"primary_color\": \"<string>\",\n        \"product_name\": \"<string>\",\n        \"provider_name\": \"<string>\",\n        \"sender_email_address\": \"<string>\",\n        \"service_link\": \"<string>\",\n        \"terms_link\": \"<string>\"\n    },\n    \"image_blob\": \"<string>\",\n    \"skin_info\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"branding\": {\n        \"contact_link\": \"<string>\",\n        \"logo_image_url\": \"<string>\",\n        \"mail_address\": \"<string>\",\n        \"primary_color\": \"<string>\",\n        \"product_name\": \"<string>\",\n        \"provider_name\": \"<string>\",\n        \"sender_email_address\": \"<string>\",\n        \"service_link\": \"<string>\",\n        \"terms_link\": \"<string>\"\n    },\n    \"image_blob\": \"<string>\",\n    \"skin_info\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"branding\": {\n        \"contact_link\": \"<string>\",\n        \"logo_image_url\": \"<string>\",\n        \"mail_address\": \"<string>\",\n        \"primary_color\": \"<string>\",\n        \"product_name\": \"<string>\",\n        \"provider_name\": \"<string>\",\n        \"sender_email_address\": \"<string>\",\n        \"service_link\": \"<string>\",\n        \"terms_link\": \"<string>\"\n    },\n    \"image_blob\": \"<string>\",\n    \"skin_info\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"branding\": {\n        \"contact_link\": \"<string>\",\n        \"logo_image_url\": \"<string>\",\n        \"mail_address\": \"<string>\",\n        \"primary_color\": \"<string>\",\n        \"product_name\": \"<string>\",\n        \"provider_name\": \"<string>\",\n        \"sender_email_address\": \"<string>\",\n        \"service_link\": \"<string>\",\n        \"terms_link\": \"<string>\"\n    },\n    \"image_blob\": \"<string>\",\n    \"skin_info\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/resource",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"resource"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get list of users under the MSP account based on limit and offset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/customers/users?offset=0&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"customers",
+								"users"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "pagination start index"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "pagination end index"
+								}
+							]
+						},
+						"description": "(Deprecated) Get list of users under the MSP account\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"users\": [\n  {\n   \"current_user\": \"<boolean>\",\n   \"groups\": {\n    \"name\": \"<string>\"\n   },\n   \"role\": \"readonly\",\n   \"description\": \"<string>\",\n   \"username\": \"<string>\"\n  },\n  {\n   \"current_user\": \"<boolean>\",\n   \"groups\": {\n    \"name\": \"<string>\"\n   },\n   \"role\": \"readonly\",\n   \"description\": \"<string>\",\n   \"username\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Bad Request , Object already exists ,  Invalid Parameters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get list of users under the Customer account based on limit and offset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/users?offset=0&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"msp_api",
+								"v1",
+								"customers",
+								":customer_id",
+								"users"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "pagination start index"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "pagination end index"
+								}
+							],
+							"variable": [
+								{
+									"key": "customer_id",
+									"value": "<string>",
+									"description": "(Required) Filter on Customer ID"
+								}
+							]
+						},
+						"description": "(Deprecated) Get list of users under the Customer account\n"
+					},
+					"response": [
+						{
+							"name": "Successful response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"users\": [\n  {\n   \"current_user\": \"<boolean>\",\n   \"groups\": {\n    \"name\": \"<string>\"\n   },\n   \"role\": \"readonly\",\n   \"description\": \"<string>\",\n   \"username\": \"<string>\"\n  },\n  {\n   \"current_user\": \"<boolean>\",\n   \"groups\": {\n    \"name\": \"<string>\"\n   },\n   \"role\": \"readonly\",\n   \"description\": \"<string>\",\n   \"username\": \"<string>\"\n  }\n ]\n}"
+						},
+						{
+							"name": "Bad Request , Object already exists ,  Invalid Parameters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						},
+						{
+							"name": "Request-size limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Request Entity Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "API rate limit exceeded",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Too Many Requests",
+							"code": 429,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Internal Server Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/msp_api/v1/customers/:customer_id/users?offset=0&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"msp_api",
+										"v1",
+										"customers",
+										":customer_id",
+										"users"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									],
+									"variable": [
+										{
+											"key": "customer_id"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"service_name\": \"<string>\",\n \"error_code\": \"<integer>\",\n \"description\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
